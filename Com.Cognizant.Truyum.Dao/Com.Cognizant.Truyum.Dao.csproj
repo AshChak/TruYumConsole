@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B08CF9C-A9E0-49D9-BB0F-558D9708B644}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Cognizant.Truyum.Dao</RootNamespace>
+    <AssemblyName>Com.Cognizant.Truyum.Dao</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CartDaoCollection.cs" />
+    <Compile Include="CartDaoCollectionTest.cs" />
+    <Compile Include="CartEmptyException.cs" />
+    <Compile Include="ConnectionHandler.cs" />
+    <Compile Include="MenuItemDaoCollection.cs" />
+    <Compile Include="ICartDao.cs" />
+    <Compile Include="IMenuItemDao.cs" />
+    <Compile Include="MenuItemDaoCollectionTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Cognizant.Truyum.Model\Com.Cognizant.Truyum.Model.csproj">
+      <Project>{a7af7026-a3a2-4993-827f-4bc7af92eaff}</Project>
+      <Name>Com.Cognizant.Truyum.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Cognizant.Truyum.Utility\Com.Cognizant.Truyum.Utility.csproj">
+      <Project>{09239e93-8570-423b-9eaa-f35acca16312}</Project>
+      <Name>Com.Cognizant.Truyum.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TruyumOnline\TruyumOnline.csproj">
+      <Project>{da4dd926-329a-48bd-9751-40a6b90b63a8}</Project>
+      <Name>TruyumOnline</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
