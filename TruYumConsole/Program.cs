@@ -20,6 +20,17 @@ namespace TruYumConsole
             cartDaoCollectionTest.TestAddCartItem();
             cartDaoCollectionTest.TestRemoveCartItem();
 
+            MenuItemDaoSqlTest menuItemDaoSqlTest = new MenuItemDaoSqlTest();
+            menuItemDaoSqlTest.TestGetMenuItemListAdmin();
+            menuItemDaoSqlTest.TestGetMenuItemListCustomer();
+            menuItemDaoSqlTest.TestEditMenuItem();
+            menuItemDaoSqlTest.TestGetMenuItem();
+
+            CartDaoSqlTest cartDaoSqlTest = new CartDaoSqlTest();
+            cartDaoSqlTest.TestAddMenuItem();
+            cartDaoSqlTest.TestGetMenuItems();
+            cartDaoSqlTest.TestRemoveMenuItem();
+
             Console.ReadKey();
         }
     }

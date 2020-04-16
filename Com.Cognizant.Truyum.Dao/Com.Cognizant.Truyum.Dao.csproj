@@ -43,14 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CartDaoCollection.cs" />
-    <Compile Include="CartDaoCollectionTest.cs" />
     <Compile Include="CartDaoSql.cs" />
     <Compile Include="CartEmptyException.cs" />
     <Compile Include="ConnectionHandler.cs" />
     <Compile Include="MenuItemDaoCollection.cs" />
     <Compile Include="ICartDao.cs" />
     <Compile Include="IMenuItemDao.cs" />
-    <Compile Include="MenuItemDaoCollectionTest.cs" />
     <Compile Include="MenuItemDaoSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

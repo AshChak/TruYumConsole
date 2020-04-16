@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Com.Cognizant.Truyum.Dao;
 using Com.Cognizant.Truyum.Model;
 using Com.Cognizant.Truyum.Utility;
 
-namespace Com.Cognizant.Truyum.Dao
+namespace TruYumConsole
 {
     public class MenuItemDaoCollectionTest
     {

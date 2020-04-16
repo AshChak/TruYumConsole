@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartDaoCollectionTest.cs" />
+    <Compile Include="CartDaoSqlTest.cs" />
+    <Compile Include="MenuItemDaoCollectionTest.cs" />
+    <Compile Include="MenuItemDaoSqlTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
