@@ -9,9 +9,9 @@ namespace Com.Cognizant.Truyum.Dao
 {
     public class CartDaoCollection : ICartDao
     {
-        private Dictionary<long,Cart> userCarts;
+        private static Dictionary<long,Cart> userCarts;
 
-        public Dictionary<long,Cart> UserCarts
+        public static Dictionary<long,Cart> UserCarts
         {
             get { return userCarts; }
             set { userCarts = value; }

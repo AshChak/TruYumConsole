@@ -9,11 +9,6 @@ namespace Com.Cognizant.Truyum.Dao
 {
     public class CartDaoCollectionTest
     {
-        public static void Main(string[] args)
-        {
-
-        }
-
         public void TestAddCartItem()
         {
             CartDaoCollection cartDao = new CartDaoCollection();
@@ -38,7 +33,7 @@ namespace Com.Cognizant.Truyum.Dao
             catch (CartEmptyException ex)
             {
                 Console.WriteLine(ex.Message);
-            }            
+            }
 
         }
 

@@ -8,10 +8,10 @@ using System.Data.SqlClient;
 
 namespace Com.Cognizant.Truyum.Dao
 {
-    class ConnectionHandler
+    public class ConnectionHandler
     {
-        public SqlConnection GetConnection() {
-            throw new NotImplementedException();
+        public static SqlConnection GetConnection() {
+            return new SqlConnection(ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString);
         }
     }
 }

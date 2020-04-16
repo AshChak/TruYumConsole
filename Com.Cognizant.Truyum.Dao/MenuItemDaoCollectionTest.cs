@@ -10,11 +10,6 @@ namespace Com.Cognizant.Truyum.Dao
 {
     public class MenuItemDaoCollectionTest
     {
-        public static void Main(string[] args)
-        {
-
-        }
-
         public void TestGetMenuItemListAdmin()
         {
             MenuItemDaoCollection menuItemDao = new MenuItemDaoCollection();
