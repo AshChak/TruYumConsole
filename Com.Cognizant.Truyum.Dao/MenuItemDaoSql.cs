@@ -28,9 +28,7 @@ namespace Com.Cognizant.Truyum.Dao
                         MenuItem item = new MenuItem();
                         item.Id = reader.GetInt64(0);
                         item.Name = reader.GetString(1);
-                        float price= reader.GetFloat(2);
-                        item.Price = price;
-                        //item.Price = reader.GetFloat(2);
+                        item.Price = Convert.ToSingle(reader[2]);
                         item.Active = (reader.GetString(3) == "yes" ? true : false);
                         item.DateOfLaunch = reader.GetDateTime(4);
                         item.Category = reader.GetString(5);
@@ -62,7 +60,7 @@ namespace Com.Cognizant.Truyum.Dao
                         MenuItem item = new MenuItem();
                         item.Id = reader.GetInt64(0);
                         item.Name = reader.GetString(1);
-                        item.Price = reader.GetFloat(2);
+                        item.Price = Convert.ToSingle(reader[2]);
                         item.Active = (reader.GetString(3) == "yes" ? true : false);
                         item.DateOfLaunch = reader.GetDateTime(4);
                         item.Category = reader.GetString(5);
@@ -91,12 +89,11 @@ namespace Com.Cognizant.Truyum.Dao
                 {
                     item.Id = reader.GetInt64(0);
                     item.Name = reader.GetString(1);
-                    item.Price = reader.GetFloat(2);
+                    item.Price = Convert.ToSingle(reader[2]);
                     item.Active = (reader.GetString(3) == "yes" ? true : false);
                     item.DateOfLaunch = reader.GetDateTime(4);
                     item.Category = reader.GetString(5);
                     item.FreeDelivery = (reader.GetString(6) == "yes" ? true : false);
-
                 }
 
             }
@@ -115,10 +112,10 @@ namespace Com.Cognizant.Truyum.Dao
 
                 sqlCommand.Parameters.AddWithValue("@name", menuItem.Name);
                 sqlCommand.Parameters.AddWithValue("@price", menuItem.Price);
-                sqlCommand.Parameters.AddWithValue("@active", menuItem.Active);
+                sqlCommand.Parameters.AddWithValue("@active", (menuItem.Active == true) ? "yes" : "no");
                 sqlCommand.Parameters.AddWithValue("@date", menuItem.DateOfLaunch);
                 sqlCommand.Parameters.AddWithValue("@category", menuItem.Category);
-                sqlCommand.Parameters.AddWithValue("@delivery", menuItem.FreeDelivery);
+                sqlCommand.Parameters.AddWithValue("@delivery", (menuItem.FreeDelivery == true) ? "yes" : "no");
                 sqlCommand.Parameters.AddWithValue("@id", menuItem.Id);
 
                 sqlCommand.ExecuteNonQuery();

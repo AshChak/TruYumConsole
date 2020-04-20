@@ -41,7 +41,7 @@ namespace Com.Cognizant.Truyum.Dao
                         MenuItem item = new MenuItem();
                         item.Id = reader.GetInt64(0);
                         item.Name = reader.GetString(1);
-                        item.Price = reader.GetFloat(2);
+                        item.Price = Convert.ToSingle(reader[2]);
                         item.Active = (reader.GetString(3) == "yes" ? true : false);
                         item.DateOfLaunch = reader.GetDateTime(4);
                         item.Category = reader.GetString(5);
