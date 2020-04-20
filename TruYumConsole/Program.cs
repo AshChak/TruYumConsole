@@ -11,26 +11,40 @@ namespace TruYumConsole
     {
         static void Main(string[] args)
         {
-            MenuItemDaoCollectionTest menuItemDaoCollectionTest = new MenuItemDaoCollectionTest();
-            menuItemDaoCollectionTest.TestGetMenuItemListAdmin();
-            menuItemDaoCollectionTest.TestGetMenuItemListCustomer();
-            menuItemDaoCollectionTest.TestModifyMenuItem();
+            //try
+            //{
+                MenuItemDaoCollectionTest menuItemDaoCollectionTest = new MenuItemDaoCollectionTest();
+                menuItemDaoCollectionTest.TestGetMenuItemListAdmin();
+                menuItemDaoCollectionTest.TestGetMenuItemListCustomer();
+                menuItemDaoCollectionTest.TestModifyMenuItem();
 
-            CartDaoCollectionTest cartDaoCollectionTest = new CartDaoCollectionTest();
-            cartDaoCollectionTest.TestAddCartItem();
-            cartDaoCollectionTest.TestRemoveCartItem();
+                Console.WriteLine("1 object done.");
 
-            MenuItemDaoSqlTest menuItemDaoSqlTest = new MenuItemDaoSqlTest();
-            menuItemDaoSqlTest.TestGetMenuItemListAdmin();
-            menuItemDaoSqlTest.TestGetMenuItemListCustomer();
-            menuItemDaoSqlTest.TestEditMenuItem();
-            menuItemDaoSqlTest.TestGetMenuItem();
+                CartDaoCollectionTest cartDaoCollectionTest = new CartDaoCollectionTest();
+                cartDaoCollectionTest.TestAddCartItem();
+                cartDaoCollectionTest.TestRemoveCartItem();
 
-            CartDaoSqlTest cartDaoSqlTest = new CartDaoSqlTest();
-            cartDaoSqlTest.TestAddMenuItem();
-            cartDaoSqlTest.TestGetMenuItems();
-            cartDaoSqlTest.TestRemoveMenuItem();
+                Console.WriteLine("2 objects done.");
 
+                MenuItemDaoSqlTest menuItemDaoSqlTest = new MenuItemDaoSqlTest();
+                menuItemDaoSqlTest.TestGetMenuItemListAdmin();
+                menuItemDaoSqlTest.TestGetMenuItemListCustomer();
+                menuItemDaoSqlTest.TestEditMenuItem();
+                menuItemDaoSqlTest.TestGetMenuItem();
+
+                Console.WriteLine("3 objects done.");
+
+                CartDaoSqlTest cartDaoSqlTest = new CartDaoSqlTest();
+                cartDaoSqlTest.TestAddMenuItem();
+                cartDaoSqlTest.TestGetMenuItems();
+                cartDaoSqlTest.TestRemoveMenuItem();
+
+                Console.WriteLine("4 objects done.");
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
             Console.ReadKey();
         }
     }

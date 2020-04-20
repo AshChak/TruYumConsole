@@ -50,7 +50,7 @@ namespace Com.Cognizant.Truyum.Dao
             {
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand("select * from menu_item where me_active='yes' and me_date_of_launch<=@today", sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@today", DateTime.Today.ToString("d"));
+                sqlCommand.Parameters.AddWithValue("@today", DateTime.Today);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
 
                 if (reader.HasRows)
@@ -87,13 +87,19 @@ namespace Com.Cognizant.Truyum.Dao
 
                 if (reader.HasRows)
                 {
-                    item.Id = reader.GetInt64(0);
-                    item.Name = reader.GetString(1);
-                    item.Price = Convert.ToSingle(reader[2]);
-                    item.Active = (reader.GetString(3) == "yes" ? true : false);
-                    item.DateOfLaunch = reader.GetDateTime(4);
-                    item.Category = reader.GetString(5);
-                    item.FreeDelivery = (reader.GetString(6) == "yes" ? true : false);
+                    while (reader.Read())
+                    {
+
+                        item.Id = reader.GetInt64(0);
+                        item.Name = reader.GetString(1);
+                        item.Price = Convert.ToSingle(reader[2]);
+                        item.Active = (reader.GetString(3) == "yes" ? true : false);
+                        item.DateOfLaunch = reader.GetDateTime(4);
+                        item.Category = reader.GetString(5);
+                        item.FreeDelivery = (reader.GetString(6) == "yes" ? true : false);
+
+                        break;
+                    }
                 }
 
             }

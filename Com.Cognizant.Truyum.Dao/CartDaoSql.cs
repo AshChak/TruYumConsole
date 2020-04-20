@@ -16,7 +16,7 @@ namespace Com.Cognizant.Truyum.Dao
             using (sqlConnection)
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("insert into menu_item values(@userId, @menuItemId)", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("insert into cart values(@userId, @menuItemId)", sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@userId", userId);
                 sqlCommand.Parameters.AddWithValue("@menuItemId", menuItemId);
                 sqlCommand.ExecuteNonQuery();
@@ -31,7 +31,7 @@ namespace Com.Cognizant.Truyum.Dao
             {
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand("select * from menu_item m left join cart c on m.me_id=c.ct_me_id where ct_id=@userId", sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@ct_us_id", userId);
+                sqlCommand.Parameters.AddWithValue("@userId", userId);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
 
                 if (reader.HasRows)
@@ -62,7 +62,7 @@ namespace Com.Cognizant.Truyum.Dao
             {
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand("delete from cart " +
-                    "where ct_us_id = @userId, ct_me_id = @menuItemId",sqlConnection);
+                    "where ct_us_id = @userId and ct_me_id = @menuItemId",sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@userId", userId);
                 sqlCommand.Parameters.AddWithValue("@menuItemId", menuItemId);
                 sqlCommand.ExecuteNonQuery();
